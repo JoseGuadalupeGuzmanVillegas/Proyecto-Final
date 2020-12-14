@@ -155,9 +155,9 @@ const deleteUsuario = async(req, res) => {
 
 }
 const resetPassword = async(req, res) => {
-    const { email, password } = req.body;
+    const { email, Newpassword } = req.body;
     const salt = bcrypt.genSaltSync();
-    const newPassword = bcrypt.hashSync(password, salt);
+    const newPassword = bcrypt.hashSync(Newpassword, salt);
     const sqlParams = [{
         'name': 'email',
         'value': email
